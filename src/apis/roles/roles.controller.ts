@@ -9,13 +9,13 @@ export class RolesController {
   constructor(private readonly roleService: RolesService) {}
 
   // Endpoint to create a new role
-  @Post()
+  @Post('create')
   async createRole(@Body() createRoleDto: CreateRoleDto): Promise<Role> {
     return this.roleService.createRole(createRoleDto);
   }
 
   // Endpoint to get all roles
-  @Get()
+  @Get('get-roles')
   async getRoles(): Promise<Role[]> {
     return this.roleService.getRoles();
   }

@@ -49,6 +49,6 @@ export class RolesService {
 
   // Method to get all roles
   async getRoles(): Promise<Role[]> {
-    return this.roleModel.find().exec();
+    return  this.roleModel.find().select('name code -_id').exec();
   }
 }
